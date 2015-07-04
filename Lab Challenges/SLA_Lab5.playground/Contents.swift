@@ -125,26 +125,39 @@ println(labMatrix(10,20))
 
 // TASK #6 - Create function converting an integer into a double value
 
-func inchesToFeet(inches:Int) {
+func inchesToFeet(inches:Int) -> Double {
     
     var numberOfFeet = 0.00
-    
-    
     
     var numberOfInches = "\(inches)"
     println(numberOfInches)
     
     var inchesInToDouble = Double((numberOfInches as NSString).doubleValue)
     
-    numberOfFeet = numberOfInches/12
+    numberOfFeet = inchesInToDouble/12
     
-    
-   //     numberOfFeet = numberOfInches/12
-    
-   // return 0.00
+    return numberOfFeet
 }
 
-inchesToFeet(5)
+// TASK #7 - Test function. The try passing a Double value into function
+inchesToFeet(120)
+
+// inchesToFeet(12.5)  // function will not work with Double because property calls for an Integer.
+
+// TASK #8 - Rewrite function so that a Double can be passed into
+
+func inToFt(inches:Double) -> Double {
+    
+    var numberOfFt = 0.0
+    var numberOfIn = inches
+    
+    numberOfFt = numberOfIn/12.0
+    
+    return numberOfFt
+}
+
+inToFt(12.4)
+
 
 
 
